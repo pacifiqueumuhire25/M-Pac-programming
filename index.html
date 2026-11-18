@@ -3,86 +3,608 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Multimedia Player</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #101827;
-      color: #f1f5f9;
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 25px;
-    }
 
-    h1 {
-      color: #38bdf8;
-      text-align: center;
-    }
-     section {
-      background-color: #1e293b;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 12px;
-    }
+  <title>GoalGoalZone - Ultimate FootballLive</title>
 
-    h2 {
-      color: #a5f3fc;
-    }
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    audio, video {
-      display: block;
-      max-width: 100%;
-      margin-top: 15px;
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: "#020b16",
+            panel: "#061525",
+            emerald: "#00f5a0",
+            blue: "#00a8ff"
+          }
+        }
+      }
     }
-
-    p {
-      line-height: 1.7;
-    }
-  </style>
+  </script>
 </head>
-<body>
-  <h1>My Multimedia Player</h1>
 
-  <section>
-    <h2>Song: Sailing Away</h2>
-    <audio controls aria-label="Listen to the song Sailing Away">
-      <source
-        src="https://cdn.freecodecamp.org/curriculum/js-music-player/sailing-away.mp3"
-        type="audio/mpeg"
-      >
-      Your browser does not support the audio element.
-    </audio>
+<body class="bg-[#020b16] text-white min-h-screen">
+
+  <!-- NAVIGATION -->
+  <header class="border-b border-slate-800 bg-[#03101d]">
+    <div class="max-w-[1500px] mx-auto px-5 py-3 flex items-center gap-8">
+
+      <div class="flex items-center gap-3">
+        <div class="text-4xl">⚽</div>
+        <div>
+          <h1 class="text-2xl font-bold text-cyan-400">
+            GoalGoalZone
+          </h1>
+          <p class="text-xs text-emerald-400">
+            Ultimate FootballLive
+          </p>
+        </div>
+      </div>
+
+      <nav class="hidden lg:flex gap-6 text-sm">
+        <a class="text-emerald-400">⌂ Home</a>
+        <a>◉ Live Scores</a>
+        <a>▤ News</a>
+        <a>⇄ Transfers</a>
+        <a>☷ Standings</a>
+        <a>▣ Fixtures</a>
+        <a>More⌄</a>
+      </nav>
+
+      <input
+        class="ml-auto hidden md:block bg-[#071a2d]
+        border border-slate-700 rounded-lg px-4 py-2
+        text-sm outline-none"
+        placeholder="Search teams, players, leagues..."
+      />
+
+    </div>
+  </header>
+
+
+  <!-- LIVE SCORE TICKER -->
+  <section class="max-w-[1500px] mx-auto px-5 py-4">
+
+    <div class="flex gap-3 overflow-x-auto">
+
+      <div class="bg-emerald-500/10 border border-emerald-500/40
+                  rounded-lg px-5 py-3 min-w-[180px]">
+        <span class="text-emerald-400 font-bold">● LIVE</span>
+        <p class="text-xs mt-2">Top Leagues</p>
+      </div>
+
+      <div class="score-card">
+        <span>Premier League</span>
+        <p>⚽ Man City <b>2 - 1</b> Arsenal</p>
+        <small class="text-emerald-400">72'</small>
+      </div>
+
+      <div class="score-card">
+        <span>La Liga</span>
+        <p>⚽ Real Madrid <b>1 - 1</b> Barcelona</p>
+        <small class="text-emerald-400">68'</small>
+      </div>
+
+      <div class="score-card">
+        <span>Bundesliga</span>
+        <p>⚽ Bayern <b>3 - 0</b> Dortmund</p>
+        <small class="text-emerald-400">63'</small>
+      </div>
+
+      <div class="score-card">
+        <span>Serie A</span>
+        <p>Inter <b>2 - 0</b> Milan</p>
+        <small class="text-emerald-400">58'</small>
+      </div>
+
+    </div>
+
   </section>
 
-  <section>
-    <h2>Video: Understanding the Map Method</h2>
-    <video
-      controls
-      width="600"
-      aria-label="Watch a tutorial explaining the JavaScript map method"
-    >
-      <source
-        src="https://cdn.freecodecamp.org/curriculum/labs/what-is-the-map-method-and-how-does-it-work.mp4"
-        type="video/mp4"
-      >
-      <track
-        src="https://cdn.freecodecamp.org/curriculum/labs/what-is-the-map-method-and-how-does-it-work.vtt"
-        kind="subtitles"
-        srclang="en"
-        label="English"
-      >
-      Your browser does not support the video element.
-    </video>
-  </section>
 
-  <section>
-    <h2>Transcript</h2>
-    <p>
-      In this video, you will learn about the JavaScript map method.
-      The map method creates a new array by applying a function to
-      each element of an existing array. It is useful for transforming
-      data while keeping the original array unchanged.
-    </p>
-  </section>
+  <!-- HERO -->
+  <main class="max-w-[1500px] mx-auto px-5">
+
+    <section class="grid lg:grid-cols-3 gap-5">
+
+      <!-- MAIN MATCH -->
+      <div class="lg:col-span-2 rounded-2xl overflow-hidden
+                  border border-blue-500/50
+                  bg-gradient-to-br from-[#071b30] to-[#020b16]">
+
+        <div class="p-8 text-center">
+
+          <p class="text-emerald-400 font-bold tracking-widest">
+            EL CLASICO
+          </p>
+
+          <h2 class="text-3xl md:text-4xl font-bold mt-2">
+            Real Madrid vs Barcelona
+          </h2>
+
+          <p class="text-slate-400 mt-2">
+            La Liga • Santiago Bernabéu
+          </p>
+
+          <div class="flex justify-center items-center
+                      gap-10 md:gap-20 mt-8">
+
+            <div>
+              <div class="text-5xl">⚪</div>
+              <h3 class="mt-3 font-bold">Real Madrid</h3>
+            </div>
+
+            <div>
+              <div class="text-5xl font-bold">
+                1 - 1
+              </div>
+
+              <span class="inline-block mt-3
+                           bg-red-500 px-3 py-1 rounded-full
+                           text-xs font-bold">
+                LIVE
+              </span>
+            </div>
+
+            <div>
+              <div class="text-5xl">🔴🔵</div>
+              <h3 class="mt-3 font-bold">Barcelona</h3>
+            </div>
+
+          </div>
+
+
+          <!-- MATCH STATS -->
+          <div class="max-w-xl mx-auto mt-10 space-y-5">
+
+            <div>
+              <div class="flex justify-between text-sm">
+                <span>52%</span>
+                <span>Possession</span>
+                <span>48%</span>
+              </div>
+
+              <div class="h-2 bg-slate-800 rounded-full mt-2">
+                <div class="h-full w-[52%]
+                            bg-cyan-400 rounded-full"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm">
+                <span>6</span>
+                <span>Shots on Target</span>
+                <span>5</span>
+              </div>
+
+              <div class="h-2 bg-slate-800 rounded-full mt-2">
+                <div class="h-full w-[55%]
+                            bg-blue-500 rounded-full"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm">
+                <span>4</span>
+                <span>Corners</span>
+                <span>3</span>
+              </div>
+            </div>
+
+          </div>
+
+
+          <button
+            class="mt-8 bg-emerald-400 hover:bg-emerald-300
+                   text-black font-bold px-8 py-4 rounded-full">
+            ▶ Watch Live Stream
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- SIDE PANEL -->
+      <aside class="rounded-2xl border border-emerald-500/30
+                    bg-[#061525] p-6">
+
+        <h2 class="text-3xl font-bold text-emerald-400">
+          Football
+        </h2>
+
+        <h3 class="text-xl font-bold mt-2">
+          More Than a Game
+        </h3>
+
+        <div class="grid grid-cols-2 gap-3 mt-8
+                    text-sm text-slate-300">
+
+          <span>Live Scores</span>
+          <span>News</span>
+          <span>Transfers</span>
+          <span>Stats</span>
+          <span>Standings</span>
+          <span>Fixtures</span>
+
+        </div>
+
+        <button
+          class="mt-8 border border-emerald-400
+                 text-emerald-400 px-5 py-2 rounded-full">
+          Follow Us
+        </button>
+
+      </aside>
+
+    </section>
+
+
+    <!-- NEWS -->
+    <section class="mt-6 rounded-2xl border border-slate-800
+                    bg-[#061525] p-6">
+
+      <div class="flex justify-between items-center">
+
+        <h2 class="text-2xl font-bold">
+          📣 Latest News & Transfers
+        </h2>
+
+        <a class="text-emerald-400 text-sm">
+          View All News →
+        </a>
+
+      </div>
+
+
+      <!-- FILTERS -->
+      <div class="flex gap-3 mt-5">
+
+        <button class="bg-emerald-400 text-black
+                       px-5 py-2 rounded-full">
+          All
+        </button>
+
+        <button class="bg-[#10253a] px-5 py-2 rounded-full">
+          Transfers
+        </button>
+
+        <button class="bg-[#10253a] px-5 py-2 rounded-full">
+          Analysis
+        </button>
+
+        <button class="bg-[#10253a] px-5 py-2 rounded-full">
+          UCL
+        </button>
+
+      </div>
+
+
+      <!-- NEWS GRID -->
+      <div class="grid md:grid-cols-2 xl:grid-cols-4
+                  gap-5 mt-6">
+
+        <article class="bg-[#081b2d] rounded-xl overflow-hidden
+                        border border-slate-800">
+
+          <div class="h-36 bg-gradient-to-r
+                      from-blue-900 to-slate-800
+                      flex items-center justify-center text-6xl">
+            ⚽
+          </div>
+
+          <div class="p-4">
+
+            <span class="text-xs text-emerald-400">
+              TRANSFER
+            </span>
+
+            <h3 class="font-bold mt-2">
+              Mbappé hints at long-term Real Madrid future
+            </h3>
+
+            <p class="text-sm text-slate-400 mt-2">
+              Latest transfer news and football updates.
+            </p>
+
+            <div class="text-xs text-slate-500 mt-4">
+              ◷ 2 hours ago
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="news-card">
+          <div class="news-image">👔</div>
+          <div class="p-4">
+            <span class="text-blue-400 text-xs">ANALYSIS</span>
+            <h3 class="font-bold mt-2">
+              Guardiola: "We must improve our consistency"
+            </h3>
+            <p class="text-sm text-slate-400 mt-2">
+              Football analysis and match reaction.
+            </p>
+          </div>
+        </article>
+
+
+        <article class="news-card">
+          <div class="news-image">🔵🔴</div>
+          <div class="p-4">
+            <span class="text-emerald-400 text-xs">TRANSFERS</span>
+            <h3 class="font-bold mt-2">
+              Lewandowski linked with summer exit?
+            </h3>
+            <p class="text-sm text-slate-400 mt-2">
+              Latest transfer developments.
+            </p>
+          </div>
+        </article>
+
+
+        <article class="news-card">
+          <div class="news-image">🏆</div>
+          <div class="p-4">
+            <span class="text-blue-400 text-xs">UCL</span>
+            <h3 class="font-bold mt-2">
+              UCL quarter-final draw confirmed
+            </h3>
+            <p class="text-sm text-slate-400 mt-2">
+              Champions League news and updates.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- LOWER GRID -->
+    <section class="grid lg:grid-cols-3 gap-5 mt-6">
+
+      <!-- STANDINGS -->
+      <div class="lg:col-span-2 bg-[#061525]
+                  border border-slate-800 rounded-2xl p-6">
+
+        <div class="flex justify-between">
+          <h2 class="text-xl font-bold">
+            📊 Live League Standings
+          </h2>
+
+          <span class="text-emerald-400 text-sm">
+            View All →
+          </span>
+        </div>
+
+        <div class="flex gap-3 mt-5">
+
+          <button class="bg-emerald-400 text-black
+                         px-4 py-2 rounded-lg">
+            Premier League
+          </button>
+
+          <button class="bg-[#10253a]
+                         px-4 py-2 rounded-lg">
+            La Liga
+          </button>
+
+          <button class="bg-[#10253a]
+                         px-4 py-2 rounded-lg">
+            UCL
+          </button>
+
+        </div>
+
+
+        <div class="overflow-x-auto mt-5">
+
+          <table class="w-full text-sm">
+
+            <thead class="text-slate-500 border-b
+                          border-slate-700">
+
+              <tr>
+                <th class="text-left py-3">#</th>
+                <th class="text-left">Team</th>
+                <th>P</th>
+                <th>GD</th>
+                <th>Pts</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr class="border-b border-slate-800">
+                <td class="py-3">1</td>
+                <td>🔴 Liverpool</td>
+                <td>28</td>
+                <td>+42</td>
+                <td class="font-bold">67</td>
+              </tr>
+
+              <tr class="border-b border-slate-800">
+                <td class="py-3">2</td>
+                <td>🔴 Arsenal</td>
+                <td>28</td>
+                <td>+36</td>
+                <td class="font-bold">64</td>
+              </tr>
+
+              <tr class="border-b border-slate-800">
+                <td class="py-3">3</td>
+                <td>🔵 Man City</td>
+                <td>28</td>
+                <td>+35</td>
+                <td class="font-bold">63</td>
+              </tr>
+
+              <tr>
+                <td class="py-3">4</td>
+                <td>🟣 Aston Villa</td>
+                <td>28</td>
+                <td>+20</td>
+                <td class="font-bold">56</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+
+      <!-- PREDICTOR -->
+      <div class="bg-[#061525]
+                  border border-emerald-500/30
+                  rounded-2xl p-6">
+
+        <h2 class="text-xl font-bold">
+          🎯 Match Predictor
+        </h2>
+
+        <p class="text-slate-400 text-sm mt-2">
+          Who will win this match?
+        </p>
+
+        <div class="flex justify-around items-center mt-8">
+
+          <div class="text-center">
+            <div class="text-5xl">⚪</div>
+            <p class="mt-2">Real Madrid</p>
+          </div>
+
+          <strong class="text-xl">VS</strong>
+
+          <div class="text-center">
+            <div class="text-5xl">🔴🔵</div>
+            <p class="mt-2">Barcelona</p>
+          </div>
+
+        </div>
+
+
+        <div class="grid grid-cols-3 gap-2 mt-8">
+
+          <button class="border border-emerald-400
+                         rounded-lg p-3">
+            42%
+          </button>
+
+          <button class="border border-slate-700
+                         rounded-lg p-3">
+            28%
+          </button>
+
+          <button class="border border-blue-400
+                         rounded-lg p-3">
+            30%
+          </button>
+
+        </div>
+
+
+        <button class="w-full mt-6
+                       bg-emerald-400 text-black
+                       font-bold py-3 rounded-lg">
+          View Detailed Prediction
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 mt-10">
+
+    <div class="max-w-[1500px] mx-auto
+                px-5 py-8 flex justify-between">
+
+      <div>
+        <h2 class="text-xl font-bold text-cyan-400">
+          ⚽ GoalGoalZone
+        </h2>
+
+        <p class="text-xs text-slate-500">
+          Ultimate FootballLive
+        </p>
+      </div>
+
+      <div class="text-sm text-slate-500">
+        © 2026 GoalGoalZone. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- CUSTOM CSS -->
+  <style>
+
+    .score-card {
+      min-width: 250px;
+      padding: 14px 20px;
+      border-radius: 10px;
+      background: #061525;
+      border: 1px solid #19334d;
+    }
+
+    .score-card span {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .score-card p {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .news-card {
+      background: #081b2d;
+      border: 1px solid #1e3348;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .news-image {
+      height: 144px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 55px;
+      background:
+        linear-gradient(
+          135deg,
+          #09213a,
+          #07111e
+        );
+    }
+
+    ::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #020b16;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #00f5a0;
+      border-radius: 10px;
+    }
+
+  </style>
+
 </body>
 </html>
