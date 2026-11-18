@@ -18,3 +18,71 @@
       color: #38bdf8;
       text-align: center;
     }
+     section {
+      background-color: #1e293b;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 12px;
+    }
+
+    h2 {
+      color: #a5f3fc;
+    }
+
+    audio, video {
+      display: block;
+      max-width: 100%;
+      margin-top: 15px;
+    }
+
+    p {
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Multimedia Player</h1>
+
+  <section>
+    <h2>Song: Sailing Away</h2>
+    <audio controls aria-label="Listen to the song Sailing Away">
+      <source
+        src="https://cdn.freecodecamp.org/curriculum/js-music-player/sailing-away.mp3"
+        type="audio/mpeg"
+      >
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <section>
+    <h2>Video: Understanding the Map Method</h2>
+    <video
+      controls
+      width="600"
+      aria-label="Watch a tutorial explaining the JavaScript map method"
+    >
+      <source
+        src="https://cdn.freecodecamp.org/curriculum/labs/what-is-the-map-method-and-how-does-it-work.mp4"
+        type="video/mp4"
+      >
+      <track
+        src="https://cdn.freecodecamp.org/curriculum/labs/what-is-the-map-method-and-how-does-it-work.vtt"
+        kind="subtitles"
+        srclang="en"
+        label="English"
+      >
+      Your browser does not support the video element.
+    </video>
+  </section>
+
+  <section>
+    <h2>Transcript</h2>
+    <p>
+      In this video, you will learn about the JavaScript map method.
+      The map method creates a new array by applying a function to
+      each element of an existing array. It is useful for transforming
+      data while keeping the original array unchanged.
+    </p>
+  </section>
+</body>
+</html>
